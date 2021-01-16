@@ -1,0 +1,1712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.ecolage.Controller.HomeController">
+   <children>
+      <AnchorPane fx:id="HomeAnchorPane" onMouseEntered="#ejectBlur" prefHeight="641.0" prefWidth="1000.0">
+         <children>
+            <Pane fx:id="header" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="123.0" prefWidth="1000.0" stylesheets="@../CSS/home.css">
+               <children>
+                  <JFXToolbar onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="25.0" prefWidth="1000.0">
+                     <right>
+                        <Pane prefHeight="25.0" prefWidth="163.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox layoutX="77.0" layoutY="5.0" prefHeight="25.0" prefWidth="86.0">
+                                 <children>
+                                    <JFXButton fx:id="info" contentDisplay="GRAPHIC_ONLY" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="27.0" ripplerFill="#2e75b6" stylesheets="@../CSS/home.css">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="INFO" />
+                                       </graphic>
+                                       <tooltip>
+                                          <Tooltip text="Information " />
+                                       </tooltip>
+                                    </JFXButton>
+                                    <JFXButton fx:id="minimize" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" ripplerFill="#2e75b6" stylesheets="@../CSS/home.css">
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="WINDOW_MINIMIZE" size="13" />
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <tooltip>
+                                          <Tooltip text="Réduire" />
+                                       </tooltip>
+                                    </JFXButton>
+                                    <JFXButton fx:id="close" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" ripplerFill="RED" stylesheets="@../CSS/home.css">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="CLOSE" size="13" />
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <tooltip>
+                                          <Tooltip text="Fermer" />
+                                       </tooltip>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                     </right>
+                  </JFXToolbar>
+                  <HBox layoutX="249.0" layoutY="13.0" prefHeight="97.0" prefWidth="502.0" stylesheets="@../CSS/home.css">
+                     <children>
+                        <JFXButton fx:id="BTN1" contentDisplay="TOP" defaultButton="true" onAction="#handleButtonAction" prefHeight="106.0" prefWidth="90.0" style="-fx-background-color: white;" text="Accueil">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="HOME" size="40" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="BTN2" contentDisplay="TOP" onAction="#handleButtonAction" prefHeight="106.0" prefWidth="90.0" style="-fx-background-color: white;" text="Paiments">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <MaterialDesignIconView glyphName="CASH_MULTIPLE" size="40" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="BTN3" contentDisplay="TOP" layoutX="187.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="106.0" prefWidth="90.0" style="-fx-background-color: white;" text="Repartitions">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="USERS" size="40" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="BTN4" contentDisplay="TOP" onAction="#handleButtonAction" prefHeight="106.0" prefWidth="90.0" style="-fx-background-color: white;" text="Contrôles">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="REBEL" size="40" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="BTN5" contentDisplay="TOP" layoutX="279.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="106.0" prefWidth="90.0" style="-fx-background-color: white;" text="Autres">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="SETTINGS" size="40" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <Line fx:id="lineBtn1" endX="-3.0" layoutX="346.0" layoutY="121.0" startX="-90.0" stroke="#b885ff00" strokeWidth="4.0">
+                     <effect>
+                        <DropShadow color="#b783ff" height="25.0" radius="11.0" />
+                     </effect></Line>
+                  <Line fx:id="lineBtn2" endX="-3.0" layoutX="447.0" layoutY="121.0" startX="-90.0" stroke="#b885ff00" strokeWidth="4.0">
+                     <effect>
+                        <DropShadow color="#b783ff" height="25.0" radius="11.0" />
+                     </effect></Line>
+                  <Line fx:id="lineBtn3" endX="-3.0" layoutX="547.0" layoutY="121.0" startX="-90.0" stroke="#b885ff00" strokeWidth="4.0">
+                     <effect>
+                        <DropShadow color="#b783ff" height="25.0" radius="11.0" />
+                     </effect></Line>
+                  <Line fx:id="lineBtn4" endX="-3.0" layoutX="648.0" layoutY="121.0" startX="-90.0" stroke="#b885ff00" strokeWidth="4.0">
+                     <effect>
+                        <DropShadow color="#b783ff" height="25.0" radius="11.0" />
+                     </effect></Line>
+                  <Line fx:id="lineBtn5" endX="-3.0" layoutX="748.0" layoutY="121.0" startX="-90.0" stroke="#b885ff00" strokeWidth="4.0">
+                     <effect>
+                        <DropShadow color="#b783ff" height="25.0" radius="11.0" />
+                     </effect></Line>
+                  <ImageView fitHeight="111.0" fitWidth="113.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/LOGOGB%20M.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="117.0" layoutY="28.0" text="Lycée">
+                     <font>
+                        <Font name="Felix Titling" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="106.0" layoutY="54.0" text="Saint">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="128.0" layoutY="43.0" text="Joseph">
+                     <font>
+                        <Font name="Felix Titling" size="36.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="LogOut" contentDisplay="TOP" layoutX="904.0" layoutY="32.0" onMouseClicked="#Déconnecter" prefHeight="80.0" prefWidth="89.0" stylesheets="@../CSS/login.css" text="Déconnecter">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="powerIcon" glyphName="POWER_OFF" size="50" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Déconnexion" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <AnchorPane fx:id="PANEL" layoutY="123.0" prefHeight="469.0" prefWidth="1000.0">
+               <children>
+                  <Pane fx:id="autre_pnl" prefHeight="469.0" prefWidth="1000.0" style="-fx-background-color: white;">
+                     <children>
+                        <JFXToolbar prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #F4F4F4;">
+                           <center>
+                              <Label text="Les autres données" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Label>
+                           </center>
+                        </JFXToolbar>
+                        <Pane fx:id="Categ_pnl" layoutX="85.0" layoutY="57.0" onMouseClicked="#ShowDroit_Modal" prefHeight="100.0" prefWidth="343.0" style="-fx-border-color: #e6e600; -fx-border-radius: 2em; -fx-background-radius: 2em; -fx-border-width: 2px;" stylesheets="@../CSS/home.css">
+                           <children>
+                              <Label layoutX="134.0" layoutY="14.0" prefHeight="27.0" prefWidth="171.0" text="Droit d'inscription" textFill="#2e75b6">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="50.0" text="Montant des droits à payer">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="70.0" text="pour l'inscription.">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="97.0" fitWidth="91.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_Categorize_96px.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane fx:id="place_pnl" layoutX="574.0" layoutY="57.0" onMouseClicked="#ShowEcolage_By_Nivevau_Modal" prefHeight="100.0" prefWidth="343.0" style="-fx-border-color: #e6e600; -fx-border-radius: 2em; -fx-background-radius: 2em; -fx-border-width: 2px;" stylesheets="@../CSS/home.css">
+                           <children>
+                              <Label layoutX="134.0" layoutY="14.0" text="Ecolage par Niveau" textFill="#2e75b6">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="50.0" text="Frais scolaire pour les niveaux">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="70.0" text="existant dans ce lycée.">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="97.0" fitWidth="91.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_Book_Shelf_96px.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane fx:id="anneeS_pnl" layoutX="85.0" layoutY="307.0" onMouseClicked="#ShowAnnée_Scolaire_Modal" prefHeight="100.0" prefWidth="343.0" style="-fx-border-color: #e6e600; -fx-border-radius: 2em; -fx-background-radius: 2em; -fx-border-width: 2px;" stylesheets="@../CSS/home.css">
+                           <children>
+                              <Label layoutX="134.0" layoutY="14.0" text="Année Scolaire" textFill="#2e75b6">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="50.0" text="On ajout une année scolaire ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="97.0" fitWidth="101.0" layoutX="14.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_Today_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="134.0" layoutY="70.0" text="pour chaque rentrée scolaire">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane fx:id="Classe_pnl" layoutX="574.0" layoutY="307.0" onMouseClicked="#ShowClasse_Modal" prefHeight="100.0" prefWidth="343.0" style="-fx-border-color: #e6e600; -fx-border-radius: 2em; -fx-background-radius: 2em; -fx-border-width: 2px;" stylesheets="@../CSS/home.css">
+                           <children>
+                              <Label layoutX="134.0" layoutY="14.0" text="Classe" textFill="#2e75b6">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="50.0" text="Liste des classes qui existent ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="97.0" fitWidth="101.0" layoutX="14.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_Classroom_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="134.0" layoutY="70.0" text="dans cet école.">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane fx:id="Construction_Subv" layoutX="325.0" layoutY="185.0" onMouseClicked="#ShowCons_Subv_Modal" prefHeight="100.0" prefWidth="350.0" style="-fx-border-color: #e6e600; -fx-border-radius: 2em; -fx-background-radius: 2em; -fx-border-width: 2px;" stylesheets="@../CSS/home.css">
+                           <children>
+                              <Label layoutX="134.0" layoutY="14.0" prefHeight="27.0" prefWidth="199.0" text="Construction/Subvention" textFill="#2e75b6">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="50.0" text="Montant pour la construction et ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="70.0" text="Subvention">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="97.0" fitWidth="91.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_German_House_96px.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Controles" prefHeight="469.0" prefWidth="1000.0" style="-fx-background-color: white;">
+                     <children>
+                        <AnchorPane layoutX="166.0" prefHeight="469.0" prefWidth="836.0">
+                           <children>
+                              <Pane fx:id="ExportRECAP" prefHeight="469.0" prefWidth="836.0" style="-fx-background-color: Whitesmoke;">
+                                 <children>
+                                    <Label layoutX="267.0" layoutY="45.0" text="Exporter en PDF" textFill="#bf1e1e">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#837e7e" glyphName="FILE_PDF_ALT" size="50" />
+                                       </graphic>
+                                    </Label>
+                                    <JFXComboBox fx:id="AS_EXPORT" layoutX="344.0" layoutY="98.0" prefHeight="30.0" prefWidth="120.0" promptText="Année Scolaire" />
+                                    <JFXButton fx:id="FraisSco_BTN" contentDisplay="TOP" layoutX="198.0" layoutY="178.0" onMouseClicked="#ExportFrais_Restant" prefHeight="138.0" prefWidth="194.0" stylesheets="@../CSS/home.css" text="Frais de scolarité Restant">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#329aa1" glyphName="FILE_TEXT_ALT" size="60" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="CahierSco_BTN1" contentDisplay="TOP" layoutX="404.0" layoutY="178.0" onMouseClicked="#ExportCahierEnregistrement" prefHeight="138.0" prefWidth="194.0" stylesheets="@../CSS/home.css" text="Cahier d'Enregistrement">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#cd9e46" glyphName="CLIPBOARD" size="60" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="RechercheElève" prefHeight="469.0" prefWidth="836.0" style="-fx-background-color: whitesmoke;">
+                                 <children>
+                                    <JFXComboBox fx:id="AS_Search" layoutX="21.0" layoutY="49.0" onAction="#AS_Search_Chandeg" prefHeight="25.0" prefWidth="129.0" promptText="Année Scolaire" />
+                                    <TextField fx:id="SearchBar" layoutX="158.0" layoutY="40.0" prefHeight="41.0" prefWidth="471.0" promptText="Recherche ici . . ." style="-fx-border-color: #2D75E8;">
+                                       <font>
+                                          <Font name="System Italic" size="18.0" />
+                                       </font>
+                                    </TextField>
+                                    <JFXButton fx:id="SearchBTN" contentDisplay="GRAPHIC_ONLY" layoutX="629.0" layoutY="38.0" onAction="#ChercherElèveByID" prefHeight="42.0" prefWidth="52.0" style="-fx-border-color: white; -fx-background-radius: 2em; -fx-border-radius: 1em;">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#2d75e8" glyphName="SEARCH" size="25" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <Pane fx:id="panelResult" layoutX="21.0" layoutY="96.0" prefHeight="360.0" prefWidth="800.0" style="-fx-background-color: #99ffcc; -fx-border-color: white; -fx-border-image-width: 20px; -fx-border-radius: 10px;" visible="false">
+                                       <children>
+                                          <Label layoutX="10.0" layoutY="26.0" text="Nom :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="280.0" layoutY="26.0" text="Prenoms :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="NomLbl" layoutX="58.0" layoutY="26.0" prefHeight="20.0" prefWidth="218.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="PrenomsLbl" layoutX="352.0" layoutY="26.0" prefHeight="20.0" prefWidth="437.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="48.0" text="NB :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="NbLbl" layoutX="50.0" layoutY="48.0" prefHeight="20.0" prefWidth="178.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="234.0" layoutY="48.0" text="Etat :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="EtatLbl" layoutX="276.0" layoutY="48.0" prefHeight="20.0" prefWidth="119.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="67.0" layoutY="4.0" text="Classe :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="ClasseLabel" layoutX="123.0" layoutY="3.0" prefHeight="23.0" prefWidth="138.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="271.0" layoutY="4.0" text="Numéro :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="NuméroLbl" layoutX="339.0" layoutY="5.0" prefHeight="20.0" prefWidth="40.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="396.0" layoutY="4.0" text="Date d'Incription :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="Date_InscLbl" layoutX="522.0" layoutY="4.0" prefHeight="20.0" prefWidth="115.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="70.0" text="Ecolage payé :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="EcolagePayéLbl" layoutX="119.0" layoutY="70.0" prefHeight="20.0" prefWidth="653.0" textFill="#00802b">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="92.0" text="Ecolage restant :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="EcolageRestantLbl" layoutX="133.0" layoutY="92.0" prefHeight="20.0" prefWidth="653.0" textFill="#e54600">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="158.0" layoutY="112.0" text="Construction :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="ConstructionLbl" layoutX="258.0" layoutY="112.0" prefHeight="20.0" prefWidth="115.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="428.0" layoutY="112.0" text="Subvention :">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="SubvLbl" layoutX="527.0" layoutY="112.0" prefHeight="20.0" prefWidth="115.0" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="325.0" layoutY="136.0" text="Historique de paiment:" underline="true">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="History_Tbl" blendMode="MULTIPLY" layoutX="10.0" layoutY="156.0" prefHeight="200.0" prefWidth="779.0" stylesheets="@../CSS/HistoryTbl.css">
+                                            <columns>
+                                              <TableColumn fx:id="Date_C" maxWidth="2000.0" minWidth="130.0" prefWidth="75.0" resizable="false" text="Date de Paiment" />
+                                              <TableColumn fx:id="Design_C" prefWidth="512.0" resizable="false" text="Désignation" />
+                                                <TableColumn fx:id="Vola_C" maxWidth="2000.0" minWidth="80.0" prefWidth="116.0" resizable="false" text="Montant en AR" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="notificationSearch" layoutX="689.0" layoutY="41.0" text="Non Trouvé" textFill="RED" visible="false">
+                                       <font>
+                                          <Font name="System Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="Listes_PasPayéCS" prefHeight="469.0" prefWidth="836.0" style="-fx-background-color: whitesmoke;">
+                                 <children>
+                                    <HBox layoutX="408.0" layoutY="30.0" prefHeight="42.0" prefWidth="333.0">
+                                       <children>
+                                          <JFXComboBox fx:id="Cons_SubvClasseComboBox" onAction="#Cons_SubvComboBoxChanged" prefHeight="30.0" prefWidth="157.0" promptText="Cons/Subv">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                          <JFXComboBox fx:id="Année_ScoCons_Subv" onAction="#Annee_ScolaireChanged_Cons_Subv" prefHeight="30.0" prefWidth="157.0" promptText="Année Scolaire">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="752.0" layoutY="43.0" text="Nb :" />
+                                    <Label fx:id="C_S_Lbl" alignment="CENTER" layoutX="774.0" layoutY="35.0" prefHeight="23.0" prefWidth="48.0" text="150">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="NonPayéCS_Table" layoutX="13.0" layoutY="72.0" prefHeight="383.0" prefWidth="810.0" stylesheets="@../CSS/Table.css">
+                                       <columns>
+                                          <TableColumn fx:id="Num_TblCS" maxWidth="1500.0" prefWidth="75.0" text="N°" />
+                                          <TableColumn fx:id="Matr_RepartTableCS" maxWidth="2500.0" prefWidth="75.0" text="N° Matricule" />
+                                          <TableColumn fx:id="nom_RepartTableCS" maxWidth="8000.0" prefWidth="75.0" text="Nom" />
+                                          <TableColumn fx:id="prenom_RepartTableCS" maxWidth="9000.0" prefWidth="75.0" text="Prenoms" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <Label layoutX="32.0" layoutY="35.0" text="Contrôle Construction/Subvention">
+                                       <font>
+                                          <Font name="System Bold Italic" size="20.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="SHOPPING_BASKET" size="30" />
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="Liste_Pas_PayéECOLAGE" prefHeight="469.0" prefWidth="836.0" style="-fx-background-color: Whitesmoke;">
+                                 <children>
+                                    <Label layoutX="88.0" layoutY="37.0" text="Contrôle écolage">
+                                       <font>
+                                          <Font name="System Bold Italic" size="20.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="BITBUCKET" size="30" />
+                                       </graphic>
+                                    </Label>
+                                    <HBox layoutX="337.0" layoutY="34.0" prefHeight="42.0" prefWidth="406.0">
+                                       <children>
+                                          <JFXComboBox fx:id="MoisCombo_Box" onAction="#MoisHaveChanged" prefHeight="30.0" prefWidth="120.0" promptText="Mois">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                          <JFXComboBox fx:id="ClasseCombo_Box1" layoutX="20.0" layoutY="10.0" onAction="#ClasseHaveChanged" prefHeight="30.0" prefWidth="120.0" promptText="Classe" />
+                                          <JFXComboBox fx:id="AS_Combo_Ecolage" onAction="#AS_EcolageChanged" prefHeight="30.0" prefWidth="120.0" promptText="Année Scolaire">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="752.0" layoutY="43.0" text="Nb :" />
+                                    <Label fx:id="nb_EcoLbl" alignment="CENTER" layoutX="774.0" layoutY="37.0" prefHeight="23.0" prefWidth="48.0" text="150">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="NonPayéEcolageTable" layoutX="14.0" layoutY="76.0" prefHeight="383.0" prefWidth="810.0" stylesheets="@../CSS/Table.css">
+                                       <columns>
+                                          <TableColumn fx:id="Num_Eco" maxWidth="2000.0" prefWidth="75.0" text="Numéro" />
+                                          <TableColumn fx:id="Matr_EcolageTable1" maxWidth="2500.0" prefWidth="75.0" text="N° Matricule" />
+                                          <TableColumn fx:id="nom_ClasseTable1" prefWidth="75.0" text="Nom" />
+                                          <TableColumn fx:id="prenom_ClasseTable1" maxWidth="9000.0" prefWidth="75.0" text="Prenoms" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <VBox layoutY="26.0" prefHeight="443.0" prefWidth="166.0" style="-fx-background-color: #00802b;">
+                           <children>
+                              <Label prefHeight="87.0" prefWidth="166.0" style="-fx-alignment: center; -fx-font-size: 20; -fx-text-fill: #ffffcc; -fx-border-color: #e6e600; -fx-border-width: 0 0 2 0;" text="Listes" />
+                              <JFXButton fx:id="Ecolage_Contrôle" alignment="CENTER" contentDisplay="TOP" onAction="#ShowEcolageList" prefHeight="42.0" prefWidth="166.0" text="Ecolage" textFill="#e1e4ea">
+                                 <font>
+                                    <Font name="Roboto Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e1e4ea" fontSmoothingType="LCD" glyphName="BITBUCKET" size="20" wrappingWidth="27.0" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="Cons_Subv" alignment="CENTER" contentDisplay="TOP" onAction="#ShowConstruction_Subvention" prefHeight="42.0" prefWidth="165.0" text="Cons/Subv" textFill="#e1e4ea">
+                                 <font>
+                                    <Font name="Roboto Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e1e4ea" fontSmoothingType="LCD" glyphName="SHOPPING_BASKET" size="20" wrappingWidth="26.0" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="SearchBTN" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="67.0" onAction="#ShowSearchPanel" prefHeight="42.0" prefWidth="167.0" text="Recherche" textFill="#e1e4ea">
+                                 <font>
+                                    <Font name="Roboto Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#e1e4ea" fontSmoothingType="LCD" glyphName="ACCOUNT_SEARCH" size="20" wrappingWidth="28.99997329711914" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="Exporter" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="181.0" onAction="#ImprimerListe" prefHeight="42.0" prefWidth="167.0" text="Imprimer Liste" textFill="#e1e4ea">
+                                 <font>
+                                    <Font name="Roboto Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#e1e4ea" fontSmoothingType="LCD" glyphName="FILE_PDF_BOX" size="20" wrappingWidth="28.99997329711914" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                        <JFXToolbar prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #F4F4F4;">
+                           <center>
+                              <Label text="Contrôles" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </center>
+                        </JFXToolbar>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Repartition" prefHeight="469.0" prefWidth="1000.0" style="-fx-background-color: white;">
+                     <children>
+                        <AnchorPane layoutX="166.0" prefHeight="469.0" prefWidth="836.0">
+                           <children>
+                              <Pane fx:id="Siblings_Panel" prefHeight="469.0" prefWidth="836.0" style="-fx-background-color: Whitesmoke;">
+                                 <children>
+                                    <Label layoutX="105.0" layoutY="40.0" text="Liste des siblings">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="ACCOUNT_STAR_VARIANT" size="35" />
+                                       </graphic>
+                                    </Label>
+                                    <Label layoutX="734.0" layoutY="50.0" text="Nb :">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="NbTotLabel1" alignment="CENTER" layoutX="774.0" layoutY="37.0" prefHeight="23.0" prefWidth="48.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox layoutX="5.0" layoutY="137.0" prefHeight="318.0" prefWidth="823.0" spacing="25.0">
+                                       <children>
+                                          <Label fx:id="Zandry1" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="823.0" style="-fx-background-color: white;" text=" " visible="false">
+                                             <font>
+                                                <Font size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="Zandry2" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="823.0" style="-fx-background-color: white;" text=" " visible="false">
+                                             <font>
+                                                <Font size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="Zandry3" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="823.0" style="-fx-background-color: white;" text=" " visible="false">
+                                             <font>
+                                                <Font size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="Zandry4" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="74.0" prefHeight="35.0" prefWidth="823.0" style="-fx-background-color: white;" text=" " visible="false">
+                                             <font>
+                                                <Font size="30.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <Pane layoutX="146.0" layoutY="76.0" prefHeight="59.0" prefWidth="544.0">
+                                       <children>
+                                          <TextField fx:id="SearchBar1" layoutX="14.0" layoutY="9.0" prefHeight="41.0" prefWidth="471.0" promptText="Recherche ici . . ." style="-fx-border-color: #2D75E8;">
+                                             <font>
+                                                <Font name="System Italic" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <JFXButton fx:id="SearchBTN1" contentDisplay="GRAPHIC_ONLY" layoutX="492.0" layoutY="9.0" onAction="#ShowListeZandry" prefHeight="42.0" prefWidth="52.0" style="-fx-border-color: #2E75B6; -fx-background-radius: 2em; -fx-border-radius: 1em;">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#2d75e8" glyphName="SEARCH" size="25" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="Listes_ParClasse" prefHeight="469.0" prefWidth="836.0" style="-fx-background-color: whitesmoke;">
+                                 <children>
+                                    <HBox layoutX="408.0" layoutY="30.0" prefHeight="42.0" prefWidth="333.0">
+                                       <children>
+                                          <JFXComboBox fx:id="ClasseComboBOX" onAction="#ClasseComboChanged" prefHeight="30.0" prefWidth="157.0" promptText="Classe">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                          <JFXComboBox fx:id="Année_ScoRepart_Classe" onAction="#Annee_ScolaireChanged_Classe" prefHeight="30.0" prefWidth="157.0" promptText="Année Scolaire">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="752.0" layoutY="43.0" text="Nb :" />
+                                    <Label fx:id="NbClasse" alignment="CENTER" layoutX="774.0" layoutY="35.0" prefHeight="23.0" prefWidth="48.0" text="150">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="RepartionTable1" layoutX="13.0" layoutY="72.0" prefHeight="383.0" prefWidth="810.0" stylesheets="@../CSS/Table.css">
+                                       <columns>
+                                          <TableColumn fx:id="Num_Tbl" maxWidth="1500.0" prefWidth="75.0" text="N°" />
+                                          <TableColumn fx:id="Matr_RepartTableClasse" maxWidth="2500.0" prefWidth="75.0" text="N° Matricule" />
+                                          <TableColumn fx:id="nom_RepartTableClasse" maxWidth="8000.0" prefWidth="75.0" text="Nom" />
+                                          <TableColumn fx:id="prenom_RepartTableCasse" maxWidth="9000.0" prefWidth="75.0" text="Prenoms" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <contextMenu>
+                                          <ContextMenu fx:id="ListebyClasse_Tbl">
+                                            <items>
+                                              <MenuItem fx:id="EditByContext" mnemonicParsing="false" onAction="#ShowEditPanelElève" text="Modifier">
+                                                   <graphic>
+                                                      <FontAwesomeIconView fill="#b0b933" glyphName="PENCIL" size="25" />
+                                                   </graphic>
+                                                   <accelerator>
+                                                      <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                   </accelerator>
+                                                </MenuItem>
+                                                <MenuItem fx:id="DeleteByContext1" mnemonicParsing="false" onAction="#ShowDeletePanelElève" text="Supprimer">
+                                                   <graphic>
+                                                      <FontAwesomeIconView fill="#e82b2b" glyphName="TRASH_ALT" size="25" />
+                                                   </graphic>
+                                                   <accelerator>
+                                                      <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                   </accelerator>
+                                                </MenuItem>
+                                            </items>
+                                          </ContextMenu>
+                                       </contextMenu>
+                                    </TableView>
+                                    <Label layoutX="89.0" layoutY="35.0" text="   Elèves par Classe">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fontSmoothingType="LCD" glyphName="USER_PLUS" size="30" wrappingWidth="27.0" />
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="RepartitionElèves" prefHeight="469.0" prefWidth="836.0" style="-fx-background-color: whitesmoke;">
+                                 <children>
+                                    <JFXComboBox fx:id="ClasseRepart" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="121.0" promptText="Classe" />
+                                    <JFXComboBox fx:id="AS_Repart" layoutX="14.0" layoutY="399.0" prefHeight="25.0" prefWidth="129.0" promptText="Année Scolaire" />
+                                    <VBox layoutX="161.0" layoutY="39.0" prefHeight="360.0" prefWidth="138.0">
+                                       <children>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N1" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M1" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N2" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M2" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N3" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M3" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N4" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M4" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N5" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M5" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N6" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M6" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N7" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M7" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N8" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M8" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N9" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M9" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="130.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N10" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M10" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets top="10.0" />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <VBox layoutX="339.0" layoutY="42.0" prefHeight="360.0" prefWidth="138.0">
+                                       <children>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N11" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M11" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N12" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M12" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N13" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M13" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N14" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M14" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N15" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M15" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N16" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M16" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N17" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M17" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N18" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M18" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N19" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M19" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="130.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N20" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M20" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets top="10.0" />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <VBox layoutX="513.0" layoutY="42.0" prefHeight="360.0" prefWidth="138.0">
+                                       <children>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N21" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M21" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N22" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M22" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N23" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M23" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N24" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M24" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N25" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M25" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N26" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M26" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N27" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M27" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N28" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M28" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N29" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M29" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="130.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N30" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M30" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets top="10.0" />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <HBox layoutX="614.0" layoutY="435.0" prefHeight="31.0" prefWidth="208.0">
+                                       <children>
+                                          <JFXButton fx:id="InscrireBTN" defaultButton="true" onMouseClicked="#Classer_Les_Elèves" prefHeight="28.0" prefWidth="100.0" stylesheets="@../CSS/book.css" text="OK">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="CHECK" size="18" />
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton fx:id="canceladd" onMouseClicked="#EffacerTOUT" prefHeight="28.0" prefWidth="100.0" stylesheets="@../CSS/book.css" text="Effacer Tout">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="CLOSE" size="18" />
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                    <VBox layoutX="684.0" layoutY="39.0" prefHeight="360.0" prefWidth="138.0">
+                                       <children>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N31" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M31" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N32" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M32" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N33" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M33" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N34" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M34" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N35" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M35" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N36" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M36" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N37" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M37" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N38" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M38" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N39" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M39" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="130.0" prefHeight="30.0" prefWidth="138.0">
+                                             <children>
+                                                <JFXTextField fx:id="N40" labelFloat="true" prefHeight="25.0" prefWidth="46.0" promptText="Num" />
+                                                <JFXTextField fx:id="M40" labelFloat="true" prefHeight="25.0" prefWidth="76.0" promptText="N° Matricule">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets top="10.0" />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <Line endX="-16.0" endY="387.0" layoutX="331.0" layoutY="39.0" startX="-16.0" startY="7.0" stroke="#00b6ff" />
+                                    <Line endX="-16.0" endY="387.0" layoutX="509.0" layoutY="39.0" startX="-16.0" startY="7.0" stroke="#00b6ff" />
+                                    <Line endX="-16.0" endY="387.0" layoutX="683.0" layoutY="39.0" startX="-16.0" startY="7.0" stroke="#00b6ff" />
+                                    <Label fx:id="notification" alignment="CENTER" contentDisplay="CENTER" layoutX="161.0" layoutY="435.0" prefHeight="25.0" prefWidth="437.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="Liste_Inscript" prefHeight="469.0" prefWidth="836.0" style="-fx-background-color: Whitesmoke;">
+                                 <children>
+                                    <Label layoutX="105.0" layoutY="40.0" text="   Elèves Inscrits">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fontSmoothingType="LCD" glyphName="USER_PLUS" size="30" wrappingWidth="27.0" />
+                                       </graphic>
+                                    </Label>
+                                    <HBox layoutX="410.0" layoutY="34.0" prefHeight="42.0" prefWidth="333.0">
+                                       <children>
+                                          <JFXComboBox fx:id="NiveauComboBOX" onAction="#NiveauComboChanged" prefHeight="30.0" prefWidth="157.0" promptText="Niveau">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                          <JFXComboBox fx:id="Année_ScoRepart" onAction="#Annee_ScolaireChanged" prefHeight="30.0" prefWidth="157.0" promptText="Année Scolaire">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="752.0" layoutY="43.0" text="Nb :" />
+                                    <Label fx:id="NbTotLabel" alignment="CENTER" layoutX="774.0" layoutY="37.0" prefHeight="23.0" prefWidth="48.0" text="150">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="RepartionTable" layoutX="14.0" layoutY="76.0" prefHeight="383.0" prefWidth="810.0" stylesheets="@../CSS/Table.css">
+                                      <columns>
+                                        <TableColumn fx:id="Matr_RepartTable" maxWidth="2500.0" prefWidth="75.0" text="N° Matricule" />
+                                        <TableColumn fx:id="nom_RepartTable" maxWidth="8000.0" prefWidth="75.0" text="Nom" />
+                                          <TableColumn fx:id="prenom_RepartTable" maxWidth="9000.0" prefWidth="75.0" text="Prenoms" />
+                                          <TableColumn fx:id="Obs_repartTbl" prefWidth="75.0" text="Observation" />
+                                          <TableColumn fx:id="DateInsc_RepartTable" maxWidth="3000.0" prefWidth="75.0" text="Date Inscript°" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <VBox layoutY="26.0" prefHeight="443.0" prefWidth="166.0" style="-fx-background-color: #400080;">
+                           <children>
+                              <Label prefHeight="87.0" prefWidth="166.0" style="-fx-alignment: center; -fx-font-size: 20; -fx-text-fill: #ffffcc; -fx-border-color: #2E75B6; -fx-border-width: 0 0 2 0;" text="Listes" />
+                              <JFXButton fx:id="btnHome" alignment="CENTER" contentDisplay="TOP" onAction="#Inscrit_Listes" prefHeight="42.0" prefWidth="166.0" text="Elèves Inscrits" textFill="#e1e4ea">
+                                 <font>
+                                    <Font name="Roboto Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e1e4ea" fontSmoothingType="LCD" glyphName="USER_PLUS" size="20" wrappingWidth="24.0" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnControls" alignment="CENTER" contentDisplay="TOP" onAction="#Repartitions" prefHeight="42.0" prefWidth="165.0" text="Repartitions" textFill="#e1e4ea">
+                                 <font>
+                                    <Font name="Roboto Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e1e4ea" fontSmoothingType="LCD" glyphName="ASTERISK" size="20" wrappingWidth="21.0" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnPricing" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="67.0" onAction="#Liste_Classe" prefHeight="42.0" prefWidth="167.0" text="Elèves par Classe" textFill="#e1e4ea">
+                                 <font>
+                                    <Font name="Roboto Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#e1e4ea" fontSmoothingType="LCD" glyphName="SHOPPING" size="20" wrappingWidth="28.99997329711914" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="ZokyBTN" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="207.0" onAction="#ShowZoky_Panel" prefHeight="42.0" prefWidth="167.0" text="Siblings" textFill="#e1e4ea">
+                                 <font>
+                                    <Font name="Roboto Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#e1e4ea" fontSmoothingType="LCD" glyphName="ACCOUNT_STAR_VARIANT" size="25" wrappingWidth="28.99997329711914" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                        <JFXToolbar prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #F4F4F4;">
+                           <center>
+                              <Label text="Repartitions" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </center>
+                        </JFXToolbar>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Paiments" prefHeight="469.0" prefWidth="1000.0" style="-fx-background-color: white;">
+                     <children>
+                        <JFXToolbar prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #F4F4F4;">
+                           <center>
+                              <Label text="Paiments" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Label>
+                           </center>
+                        </JFXToolbar>
+                        <Pane fx:id="AboutThisAppPanel" layoutX="643.0" layoutY="39.0" prefHeight="297.0" prefWidth="343.0" style="-fx-background-color: Whitesmoke;" visible="false">
+                           <children>
+                              <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="13.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/Fotor_154799391275750.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="74.0" layoutY="4.0" text="A propos de cette application">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="34.0" text="Une application pour gérer l'écolage des élèves. " />
+                              <Label layoutX="14.0" layoutY="51.0" text="Fait pendant le stage au lycée Saint Joseph Ambalavao 303" />
+                              <Label layoutX="14.0" layoutY="68.0" text="pour l'année 2020." />
+                              <Label layoutX="159.0" layoutY="102.0" text="Développeé par : ">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="182.0" layoutY="123.0" text="ANDRIAMAHALALA" />
+                              <Label layoutX="182.0" layoutY="140.0" text="Hamelien " />
+                              <Label layoutX="240.0" layoutY="140.0" text="Marius" />
+                              <Label layoutX="212.0" layoutY="169.0" text="Contact">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="159.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_Phone_48px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="195.0" layoutY="197.0" text="034 96 609 28" />
+                              <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="159.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_Facebook_48px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="195.0" layoutY="229.0" text="Marius Hamelien" />
+                              <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="162.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_Gmail_48px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="196.0" layoutY="263.0" text="marius.hamelien@gmail.com">
+                                 <font>
+                                    <Font name="System Italic" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="183.0" layoutY="156.0" text="L3 IG ENI" />
+                           </children>
+                        </Pane>
+                        <TableView fx:id="Paiment_Table" layoutX="14.0" layoutY="88.0" prefHeight="318.0" prefWidth="977.0" stylesheets="@../CSS/Table.css">
+                          <columns>
+                              <TableColumn fx:id="Num_Matr" maxWidth="2000.0" prefWidth="81.0" resizable="false" text="N° Matricule" />
+                              <TableColumn fx:id="Nom_Prenom" maxWidth="3000.0" prefWidth="310.0" text="Noms et Prénoms" />
+                              <TableColumn fx:id="paye" prefWidth="479.0" resizable="false" text="Payé" />
+                              <TableColumn fx:id="Montant" maxWidth="3000.0" minWidth="0.0" prefWidth="97.0" resizable="false" text="Montant" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="415.0" text="Montant Total :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="Montant_Total" layoutX="149.0" layoutY="412.0" prefHeight="17.0" prefWidth="199.0" text="1 000 000.00 Ar" textFill="#007bff">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="montant_To_Text" layoutX="412.0" layoutY="408.0" prefHeight="44.0" prefWidth="581.0" text="Un million d'ariary " textFill="RED">
+                           <font>
+                              <Font name="Buxton Sketch" size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="268.0" layoutY="33.0" prefHeight="52.0" prefWidth="471.0">
+                           <children>
+                              <JFXButton fx:id="Inscription_BTN" onMouseClicked="#FaireInscription" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: #5CB55B;" stylesheets="@../CSS/home.css" text="Inscription" textFill="#4dca5e">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#9d9d9d" glyphName="ACCOUNT_PLUS" size="30" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="Ecolage_BTN" onMouseClicked="#PayerEcolage" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: #EEAC4C;" stylesheets="@../CSS/home.css" text="Ecolage" textFill="#eeac4c">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#9d9d9d" glyphName="SQUARE_INC_CASH" size="30" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="Cons_Subv_BTN" onMouseClicked="#PayerCons_Subv" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: #D7534E;" stylesheets="@../CSS/home.css" text="Cons/Subv" textFill="#d7534e">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#9d9d9d" glyphName="BRIEFCASE_CHECK" size="30" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <Label layoutX="14.0" layoutY="45.0" text="Date :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXDatePicker fx:id="Paiment_DateP" defaultColor="#31c5ee" editable="false" layoutX="70.0" layoutY="36.0" onAction="#Date_Paiment_Changed" prefHeight="44.0" prefWidth="157.0" />
+                        <Label layoutX="739.0" layoutY="46.0" text="Année Scolaire :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="Paiment_Combo" layoutX="872.0" layoutY="37.0" onAction="#Année_ScolaireChanged" prefHeight="44.0" prefWidth="121.0" />
+                        <Label layoutX="331.0" layoutY="416.0" prefHeight="35.0" prefWidth="81.0" text="En lettres:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="home" prefHeight="469.0" prefWidth="1000.0" style="-fx-background-color: white;">
+                     <children>
+                        <VBox layoutX="1.0" layoutY="44.0" prefHeight="411.0" prefWidth="350.0">
+                           <children>
+                              <Pane fx:id="LivreSummaryPnl" onMouseClicked="#ShowInscriptionINFO" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WhiteSmoke;" stylesheets="@../CSS/book.css">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <ImageView fitHeight="111.0" fitWidth="115.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8_Books_96px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="191.0" layoutY="50.0" text="Paiments">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="EmpruntSummaryPnl" onMouseClicked="#ShowRepartitionINFO" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WhiteSmoke;" stylesheets="@../CSS/book.css">
+                                 <children>
+                                    <ImageView fitHeight="111.0" fitWidth="115.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8_Reading_96px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="175.0" layoutY="50.0" text="Repartitions">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="BilanSummaryPnl" onMouseClicked="#ShowControlesINFO" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WhiteSmoke;" stylesheets="@../CSS/book.css">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <ImageView fitHeight="111.0" fitWidth="115.0" layoutX="16.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8_Survey_96px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="185.0" layoutY="51.0" text="Contrôles">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="469.0" fitWidth="685.0" layoutX="380.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/ob_02a092_joseph-artisan.jpg" />
+                           </image></ImageView>
+                        <Label layoutX="380.0" layoutY="427.0" text="FINOANA">
+                           <font>
+                              <Font name="Goudy Old Style Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="610.0" layoutY="25.0" text="FAHAIZANA">
+                           <font>
+                              <Font name="Goudy Old Style Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="821.0" layoutY="427.0" text="FAHENDRENA">
+                           <font>
+                              <Font name="Goudy Old Style Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <JFXToolbar prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #F4F4F4;">
+                           <center>
+                              <Label text="Accueil" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </center>
+                        </JFXToolbar>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <Pane layoutY="592.0" prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #2E75B6;">
+               <effect>
+                  <DropShadow height="26.93" radius="11.4825" />
+               </effect>
+               <children>
+                  <Label layoutX="854.0" layoutY="2.0" prefHeight="17.0" prefWidth="140.0" text="Copyright 2019-2020" textFill="#f5f5f5">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="COPYRIGHT" size="15" />
+                     </graphic>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="4.0" prefHeight="17.0" prefWidth="126.0" text="MARSIHAY Production" textFill="#f5f5f5" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.ecolage.Controller.EDIT_ElèvesController">
+   <children>
+      <JFXDialogLayout fx:id="ContentDialog" />
+      <StackPane fx:id="loginStackPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <GridPane prefHeight="400.0" prefWidth="600.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="129.0" minHeight="7.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="409.0" minHeight="10.0" prefHeight="403.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="74.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="392.0" prefWidth="769.0" style="-fx-background-color: #FFFFFF;" GridPane.rowIndex="1">
+                     <children>
+                        <Pane fx:id="signUpPane" prefHeight="399.0" prefWidth="773.0" style="-fx-background-color: white;">
+                           <children>
+                              <HBox layoutX="280.0" layoutY="357.0" prefHeight="31.0" prefWidth="210.0">
+                                 <children>
+                                    <JFXButton fx:id="InscrireBTN" defaultButton="true" onMouseClicked="#Enregistrer" prefHeight="28.0" prefWidth="100.0" stylesheets="@../CSS/book.css" text="Enregistrer">
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="CHECK" size="18" />
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="canceladd" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="100.0" stylesheets="@../CSS/book.css" text="Annuler">
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="CLOSE" size="18" />
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <padding>
+                                          <Insets right="5.0" />
+                                       </padding>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <Line endX="644.0" layoutX="114.0" layoutY="54.0" startX="-100.0" />
+                              <Label alignment="CENTER" layoutX="2.0" prefHeight="53.0" prefWidth="769.0" text="Modification d'un élève" textFill="#ababab">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#ababab" glyphName="PENCIL_BOX_OUTLINE" size="40" />
+                                 </graphic>
+                              </Label>
+                              <Line endX="642.0" layoutX="114.0" layoutY="327.0" startX="-100.0" />
+                              <Label fx:id="notification" alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="332.0" prefHeight="25.0" prefWidth="642.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="Num_Matr" editable="false" layoutX="23.0" layoutY="72.0" prefHeight="21.0" prefWidth="87.0" promptText="Matricule">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXDatePicker fx:id="Date" editable="false" layoutX="287.0" layoutY="76.0" prefHeight="31.0" prefWidth="138.0" />
+                              <Label layoutX="131.0" layoutY="78.0" text="Date d'inscription :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="453.0" layoutY="78.0" text="Année Scolaire :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Pane layoutX="115.0" layoutY="277.0" prefHeight="41.0" prefWidth="503.0" />
+                              <JFXTextField fx:id="Nom" layoutX="305.0" layoutY="152.0" prefHeight="31.0" prefWidth="437.0" promptText="Nom">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="Prenom" layoutX="28.0" layoutY="230.0" prefHeight="25.0" prefWidth="714.0" promptText="prenom">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="Num" layoutX="180.0" layoutY="152.0" prefHeight="31.0" prefWidth="100.0" promptText="numero">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <ComboBox fx:id="AS_Combo" disable="true" layoutX="592.0" layoutY="73.0" prefHeight="31.0" prefWidth="150.0" promptText="Année Scolaire" />
+                              <ComboBox fx:id="Classe" layoutX="23.0" layoutY="159.0" prefHeight="31.0" prefWidth="150.0" promptText="Classe" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="63.0" prefWidth="769.0" style="-fx-background-color: #2E75B6;">
+                     <children>
+                        <HBox layoutX="694.0" layoutY="2.0" prefHeight="31.0" prefWidth="63.0">
+                           <children>
+                              <JFXButton fx:id="minimize" contentDisplay="GRAPHIC_ONLY" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="29.0" stylesheets="@../CSS/login.css">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_MINIMIZE" size="18" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="close" contentDisplay="GRAPHIC_ONLY" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="28.0" stylesheets="@../CSS/login.css">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_CLOSE" size="18" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <Label layoutX="72.0" prefHeight="36.0" prefWidth="128.0" text="Gestion" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="72.0" layoutY="43.0" prefHeight="17.0" prefWidth="138.0" text="d'un écolage" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView disable="true" fitHeight="58.0" fitWidth="65.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/LOGOGB%20M.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="33.0" prefWidth="769.0" style="-fx-background-color: #2E75B6;" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="9.0" layoutY="2.0" prefHeight="17.0" prefWidth="128.0" text="MARSIHAY Production" textAlignment="JUSTIFY" textFill="#fffdfd" wrapText="true" />
+                        <Label layoutX="631.0" layoutY="2.0" prefHeight="17.0" prefWidth="138.0" text="Copyright 2019-2020" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="COPYRIGHT" size="15" />
+                           </graphic>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</StackPane>

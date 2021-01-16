@@ -1,0 +1,188 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#InscrireBTN
+{
+    -fx-border-style: solid;
+    -fx-border-color: #4DCA5E ;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+}
+#InscrireBTN:hover
+{
+    -fx-background-color: 
+        red,
+        linear-gradient(#d6d6d6 50%,#4DCA5E 100%),
+        radial-gradient(center 50% -40%, radius 200%, #4DCA5E 45%, #4DCA5E 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+#InscrireBTN1
+{
+    -fx-border-style: solid;
+    -fx-border-color: #4DCA5E ;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+}
+#InscrireBTN1:hover
+{
+    -fx-background-color: 
+        red,
+        linear-gradient(#d6d6d6 50%,#4DCA5E 100%),
+        radial-gradient(center 50% -40%, radius 200%, #4DCA5E 45%, #4DCA5E 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+#resetadd
+{
+   -fx-border-style: solid;
+    -fx-border-color: dodgerblue ;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+}
+#resetadd:hover
+{
+-fx-background-color: 
+        red,
+        linear-gradient(#d6d6d6 50%,dodgerblue 100%),
+        radial-gradient(center 50% -40%, radius 200%, dodgerblue 45%, dodgerblue 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+#canceladd
+{
+   -fx-border-style: solid;
+    -fx-border-color: red ;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+}
+#canceladd:hover
+{ -fx-background-color: 
+        red,
+        linear-gradient(#d6d6d6 50%, red 100%),
+        radial-gradient(center 50% -40%, radius 200%, red 45%, red 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+
+#canceladd1
+{
+   -fx-border-style: solid;
+    -fx-border-color: red ;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+}
+#canceladd1:hover
+{ -fx-background-color: 
+        red,
+        linear-gradient(#d6d6d6 50%, red 100%),
+        radial-gradient(center 50% -40%, radius 200%, red 45%, red 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+
+#SaveBTN
+{
+    -fx-border-style: solid;
+    -fx-border-color: #4DCA5E ;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+}
+#SaveBTN:hover
+{
+    -fx-background-color: 
+        red,
+        linear-gradient(#d6d6d6 50%,#4DCA5E 100%),
+        radial-gradient(center 50% -40%, radius 200%, #4DCA5E 45%, #4DCA5E 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+#AddEmpBTN
+{
+    -fx-border-style: solid;
+    -fx-border-color: #4DCA5E ;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+}
+#AddEmpBTN:hover
+{
+    -fx-background-color: 
+        red,
+        linear-gradient(#d6d6d6 50%,#4DCA5E 100%),
+        radial-gradient(center 50% -40%, radius 200%, #4DCA5E 45%, #4DCA5E 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+/****************************************************
+********************** ACCUEIL Panel CSS ********************************/
+#LivreSummaryPnl{
+     -fx-border-color: #0099ff;
+     -fx-border-radius: 0em 2em 2em 0em;
+     -fx-background-radius: 0em 2em 2em 0em;
+    -fx-border-width: 4px 4px 4px 0px;
+}
+#LivreSummaryPnl:hover
+{
+-fx-background-color :  whitesmoke ;
+     -fx-border-radius: 0em 2em 2em 0em;
+     -fx-background-radius: 0em 2em 2em 0em;
+    -fx-border-width: 2px 2px 2px 0px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 15, 0.0 , 0 , 5 );
+}
+#EmpruntSummaryPnl{
+    -fx-border-color: #0099ff;
+     -fx-border-radius: 0em 2em 2em 0em;
+     -fx-background-radius: 0em 2em 2em 0em;
+    -fx-border-width: 4px 4px 4px 0px;
+}
+#EmpruntSummaryPnl:hover
+{
+-fx-background-color :  whitesmoke ;
+     -fx-border-radius: 0em 2em 2em 0em;
+     -fx-background-radius: 0em 2em 2em 0em;
+    -fx-border-width: 2px 2px 2px 0px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 15, 0.0 , 0 , 5 );
+}
+#BilanSummaryPnl{
+    -fx-border-color: #0099ff;
+     -fx-border-radius: 0em 2em 2em 0em;
+     -fx-background-radius: 0em 2em 2em 0em;
+    -fx-border-width: 4px 4px 4px 0px;
+}
+#BilanSummaryPnl:hover
+{
+-fx-background-color :  whitesmoke ;
+     -fx-border-radius: 0em 2em 2em 0em;
+     -fx-background-radius: 0em 2em 2em 0em;
+    -fx-border-width: 2px 2px 2px 0px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 15, 0.0 , 0 , 5 );
+}

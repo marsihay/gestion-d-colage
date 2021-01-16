@@ -1,0 +1,519 @@
+/*
+ * Empty Stylesheet file.
+ */
+#close:hover
+{
+-fx-background-color : #E81123;
+}
+#minimize:hover
+{
+-fx-background-color : whitesmoke ;
+}
+#info:hover
+{
+-fx-background-color : whitesmoke ;
+}
+#header{
+    -fx-border-color: #0099ff;
+    -fx-border-width: 0px 0px 4px 0px;
+}
+#BTN1 {
+    -fx-text-fill: black;
+    -fx-border-style: solid;
+    -fx-border-color: #e6e600 ;
+    -fx-border-radius: 100px 100px 10px 10px;
+    -fx-border-width: 2px;
+    -fx-background-radius:100px 100px 10px 10px;
+}
+#BTN1:hover {
+    -fx-cursor: hand;
+    -fx-background-color:white;
+    /*-fx-border-color: #B783FF;
+    -fx-border-width: 0px 0px 4px 0px;*/
+}
+#BTN1:focused {
+    -fx-cursor: hand;
+    -fx-border-color: #e6e600;
+    -fx-border-width: 2px 2px 5px 2px;
+}#BTN2 {
+    -fx-text-fill: black;
+    -fx-border-style: solid;
+    -fx-border-color: #e6e600 ;
+    -fx-border-radius: 100px 100px 10px 10px;
+    -fx-border-width: 2px;
+    -fx-background-radius:100px 100px 10px 10px;
+}
+#BTN2:hover {
+    -fx-cursor: hand;
+    -fx-background-color:white;
+   /* -fx-border-color: #B783FF;
+    -fx-border-width: 0px 0px 4px 0px;*/
+}
+#BTN2:focused {
+    -fx-cursor: hand;
+    -fx-border-color: #e6e600;
+    -fx-border-width: 2px 2px 5px 2px;
+}
+#BTN3 {
+    -fx-text-fill: black;
+    -fx-border-style: solid;
+    -fx-border-color: #e6e600 ;
+    -fx-border-radius: 100px 100px 10px 10px;
+    -fx-border-width: 2px;
+    -fx-background-radius:100px 100px 10px 10px;
+}
+#BTN3:hover {
+    -fx-cursor: hand;
+    -fx-background-color:White;
+   /* -fx-border-color: #B783FF;
+    -fx-border-width: 0px 0px 4px 0px;*/
+}
+#BTN3:focused {
+    -fx-cursor: hand;
+    -fx-border-color: #e6e600;
+    -fx-border-width: 2px 2px 5px 2px;
+}
+#BTN4 {
+    -fx-text-fill: black;
+    -fx-border-style: solid;
+    -fx-border-color: #e6e600 ;
+    -fx-border-radius: 100px 100px 10px 10px;
+    -fx-border-width: 2px;
+    -fx-background-radius:100px 100px 10px 10px;
+}
+#BTN4:hover {
+    -fx-cursor: hand;
+    -fx-background-color:white;
+  /*  -fx-border-color: #B783FF;
+    -fx-border-width: 0px 0px 4px 0px;*/
+}
+#BTN4:focused {
+    -fx-cursor: hand;
+    -fx-border-color: #e6e600;
+    -fx-border-width: 2px 2px 5px 2px;
+}
+#BTN5 {
+    -fx-text-fill: black;
+    -fx-border-style: solid;
+    -fx-border-color: #e6e600 ;
+    -fx-border-radius: 100px 100px 10px 10px;
+    -fx-border-width: 2px;
+    -fx-background-radius:100px 100px 10px 10px;
+}
+#BTN5:hover {
+    -fx-cursor: hand;
+    -fx-background-color:white;
+   /* -fx-border-color: #B783FF;
+    -fx-border-width: 0px 0px 4px 0px;*/
+}
+#BTN5:focused {
+    -fx-cursor: hand;
+    -fx-border-color: #e6e600;
+    -fx-border-width: 2px 2px 5px 2px;
+}
+
+/*buttoun Inscription, Ecolage, Construction/Subvention*/
+
+#Inscription_BTN
+{
+    -fx-border-style: solid;
+    
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#Inscription_BTN:hover
+{
+-fx-background-color : #4DCA5E ;
+    -fx-border-radius: 2em;
+    -fx-border-color: black ;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#Ecolage_BTN
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#Ecolage_BTN:hover
+{
+-fx-background-color :  #EEAC4C ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#Cons_Subv_BTN
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#Cons_Subv_BTN:hover
+{
+-fx-background-color :  #D7534E ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+
+/*****************************************************************
+**********************CSS Pour les autres panel**********************
+******************************************************************/
+#Categ_pnl:hover
+{
+-fx-background-color :  whitesmoke ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-border-width: 2px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 15, 0.0 , 0 , 5 );
+}
+#place_pnl:hover
+{
+-fx-background-color :  whitesmoke ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-border-width: 2px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 15, 0.0 , 0 , 5 );
+}
+#anneeS_pnl:hover
+{
+-fx-background-color :  whitesmoke ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-border-width: 2px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 15, 0.0 , 0 , 5 );
+}
+#Classe_pnl:hover
+{
+-fx-background-color :  whitesmoke ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-border-width: 2px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 15, 0.0 , 0 , 5 );
+}
+#Construction_Subv:hover
+{
+-fx-background-color :  whitesmoke ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-border-width: 2px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 15, 0.0 , 0 , 5 );
+}
+/**** CSS pour les Boutons dans les autres Panel *******/
+/* pour le Categorie */
+#addCateg
+{
+    -fx-border-style: solid;
+    
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#addCateg:hover
+{
+-fx-background-color : #4DCA5E ;
+    -fx-border-radius: 2em;
+    -fx-border-color: black ;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#editCateg
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#editCateg:hover
+{
+-fx-background-color :  #EEAC4C ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#delCateg
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#delCateg:hover
+{
+-fx-background-color :  #D7534E ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+/* pour l'Année Scolaire */
+#addA_S
+{
+    -fx-border-style: solid;    
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#addA_S:hover
+{
+-fx-background-color : #4DCA5E ;
+    -fx-border-radius: 2em;
+    -fx-border-color: black ;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#editA_S
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#editA_S:hover
+{
+-fx-background-color :  #EEAC4C ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#delA_S
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#delA_S:hover
+{
+-fx-background-color :  #D7534E ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+/* pour l'Emplacement */
+#addPlace
+{
+    -fx-border-style: solid;    
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#addPlace:hover
+{
+-fx-background-color : #4DCA5E ;
+    -fx-border-radius: 2em;
+    -fx-border-color: black ;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#editPlace
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#editPlace:hover
+{
+-fx-background-color :  #EEAC4C ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#delPlace
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#delPlace:hover
+{
+-fx-background-color :  #D7534E ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+/* pour le Classe */
+#addClasse
+{
+    -fx-border-style: solid;
+    
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#addClasse:hover
+{
+-fx-background-color : #4DCA5E ;
+    -fx-border-radius: 2em;
+    -fx-border-color: black ;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#editClasse
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#editClasse:hover
+{
+-fx-background-color :  #EEAC4C ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#delClasse
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#delClasse:hover
+{
+-fx-background-color :  #D7534E ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+
+/**** CSS pour les Boutons dans les EMPRUNTS Panel *******/
+/* pour l'Emprunt Enseignant */
+#add_Emp_prof
+{
+    -fx-border-style: solid;
+    
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#add_Emp_prof:hover
+{
+-fx-background-color : #4DCA5E ;
+    -fx-border-radius: 2em;
+    -fx-border-color: black ;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#edit_Emp_prof
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#edit_Emp_prof:hover
+{
+-fx-background-color :  #EEAC4C ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#del_Emp_prof
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#del_Emp_prof:hover
+{
+-fx-background-color :  #D7534E ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+/* pour l'Emprunt Etudiant */
+#add_Emp_eleve
+{
+    -fx-border-style: solid;    
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#add_Emp_eleve:hover
+{
+-fx-background-color : #4DCA5E ;
+    -fx-border-radius: 2em;
+    -fx-border-color: black ;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#edit_Emp_eleve
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#edit_Emp_eleve:hover
+{
+-fx-background-color :  #EEAC4C ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#del_Emp_eleve
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#del_Emp_eleve:hover
+{
+-fx-background-color :  #D7534E ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+/* CSS pour un Context Menu*/
+/* CSS pour SAUVER Button*/
+#editbtn
+{
+    -fx-border-style: solid;
+    -fx-border-radius: 2em;
+    -fx-background-radius: 2em ;
+}
+#editbtn:hover
+{
+-fx-background-color :  #EEAC4C ;
+    -fx-border-radius: 2em;
+-fx-background-radius: 2em ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+/*CSS pour EXPORT Button*/
+#FraisSco_BTN
+{
+    -fx-border-style: solid;
+    -fx-border-color: #2E75B6 ;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-background-color: white;
+}
+#FraisSco_BTN:hover
+{
+-fx-background-color :#ffff00;
+-fx-text-fill:  black;
+-fx-fill:  white;
+}
+#CahierSco_BTN1
+{
+    -fx-border-style: solid;
+    -fx-border-color: #2E75B6 ;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-background-color: white;
+}
+#CahierSco_BTN1:hover
+{
+-fx-background-color :#ffff00;
+-fx-text-fill:  black;
+-fx-fill:  white;
+}

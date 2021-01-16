@@ -1,0 +1,49 @@
+/*
+ * Empty Stylesheet file.
+ */
+#close:hover
+{
+-fx-background-color : #E81123;
+}
+#minimize:hover
+{
+-fx-background-color : whitesmoke ;
+}
+#info:hover
+{
+-fx-background-color : whitesmoke ;
+}
+#loginBtn
+{
+    -fx-border-style: solid;
+    -fx-border-color: #2E75B6 ;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-background-color: white;
+}
+#loginBtn:hover
+{
+-fx-background-color :#2E75B6;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#save
+{
+    -fx-border-style: solid;
+    -fx-border-color:  #2E75B6 ;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-background-color: white;
+}
+#save:hover
+{
+-fx-background-color : #2E75B6 ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}
+#LogOut:hover
+{
+-fx-background-color : #E81123 ;
+-fx-text-fill:  white;
+-fx-fill:  white;
+}

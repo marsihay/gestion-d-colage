@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.ecolage.Controller.DroitController">
+   <children>
+      <JFXDialogLayout fx:id="ContentDialog" />
+      <StackPane fx:id="loginStackPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <GridPane prefHeight="400.0" prefWidth="600.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="129.0" minHeight="7.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="409.0" minHeight="10.0" prefHeight="403.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="74.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="392.0" prefWidth="769.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../../../../../Ventes_des_Voitures/src/ventes_des_voitures/CSS/login.css" GridPane.rowIndex="1">
+                     <children>
+                        <AnchorPane layoutX="-3.0" layoutY="5.0" prefHeight="399.0" prefWidth="776.0" stylesheets="@../../../../../Ventes_des_Voitures/src/ventes_des_voitures/CSS/login.css">
+                           <children>
+                              <Pane fx:id="signUpPane" onMouseClicked="#RefreshTable" prefHeight="399.0" prefWidth="773.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <TableView fx:id="droit_tbl" layoutX="398.0" layoutY="47.0" onMouseClicked="#ActivateSave_DeleteButtounWhenTableClicked" prefHeight="336.0" prefWidth="361.0" stylesheets="@../CSS/Table.css">
+                                       <columns>
+                                          <TableColumn fx:id="designColumn" prefWidth="75.0" text="Désignation" />
+                                          <TableColumn fx:id="montant" prefWidth="75.0" text="Montant" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <Label alignment="CENTER" layoutX="67.0" layoutY="9.0" prefHeight="45.0" prefWidth="254.0" text="Droit d'inscription" wrapText="true">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="14.0" layoutY="109.0" prefHeight="182.0" prefWidth="359.0">
+                                       <children>
+                                          <GridPane alignment="CENTER" layoutX="-2.0" layoutY="7.0" prefHeight="101.0" prefWidth="371.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="30.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="341.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <JFXTextField fx:id="CategTextField" focusColor="#2e75b6" labelFloat="true" prefHeight="25.0" prefWidth="138.0" promptText="Montant" unFocusColor="#ababab" GridPane.columnIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </JFXTextField>
+                                                <MaterialDesignIconView fill="#2e75b6" glyphName="LIBRARY_BOOKS" size="30" />
+                                             </children>
+                                          </GridPane>
+                                          <HBox layoutX="24.0" layoutY="108.0" prefHeight="31.0" prefWidth="320.0">
+                                             <children>
+                                                <JFXButton fx:id="editbtn" disable="true" onMouseClicked="#EditClateg" prefHeight="50.0" prefWidth="100.0" style="-fx-border-color: #EEAC4C;" stylesheets="@../CSS/home.css" text="Sauver">
+                                                   <graphic>
+                                                      <MaterialDesignIconView glyphName="TABLE_EDIT" size="20" />
+                                                   </graphic>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <Label fx:id="Notification" alignment="CENTER" layoutX="-2.0" layoutY="145.0" prefHeight="31.0" prefWidth="359.0" textFill="RED">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="396.0" layoutY="9.0" prefHeight="38.0" prefWidth="121.0">
+                                       <children>
+                                          <Label layoutX="1.0" layoutY="14.0" prefHeight="17.0" prefWidth="53.0" text="Nombre:" />
+                                          <Label fx:id="nombreNotif" layoutX="54.0" layoutY="6.0" prefHeight="33.0" prefWidth="68.0" text="100000000" textFill="#2e75b6">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="63.0" prefWidth="769.0" style="-fx-background-color: #2E75B6;">
+                     <children>
+                        <HBox layoutX="694.0" layoutY="2.0" prefHeight="31.0" prefWidth="63.0">
+                           <children>
+                              <JFXButton fx:id="minimize" contentDisplay="GRAPHIC_ONLY" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="29.0" stylesheets="@../CSS/login.css">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_MINIMIZE" size="18" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="close" contentDisplay="GRAPHIC_ONLY" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="28.0" stylesheets="@../CSS/login.css">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_CLOSE" size="18" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <Label layoutX="72.0" prefHeight="36.0" prefWidth="128.0" text="Gestion" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="72.0" layoutY="43.0" prefHeight="17.0" prefWidth="138.0" text="d'un écolage" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView disable="true" fitHeight="58.0" fitWidth="65.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/LOGOGB%20M.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="33.0" prefWidth="769.0" style="-fx-background-color: #2E75B6;" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="9.0" layoutY="2.0" prefHeight="17.0" prefWidth="128.0" text="MARSIHAY Production" textAlignment="JUSTIFY" textFill="#fffdfd" wrapText="true" />
+                        <Label layoutX="631.0" layoutY="2.0" prefHeight="17.0" prefWidth="138.0" text="Copyright 2019-2020" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="COPYRIGHT" size="15" />
+                           </graphic>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</StackPane>

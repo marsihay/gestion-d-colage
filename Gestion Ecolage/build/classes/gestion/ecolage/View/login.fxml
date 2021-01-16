@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="loginStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.ecolage.Controller.LoginController">
+   <children>
+      <JFXDialogLayout fx:id="DialogLayout" />
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Pane prefHeight="190.0" prefWidth="900.0" style="-fx-background-color: #2E75B6;" />
+            <Pane prefHeight="411.0" prefWidth="900.0">
+               <children>
+                  <Label layoutX="760.0" layoutY="390.0" prefHeight="17.0" prefWidth="136.0" text="Copyright 2019-2020">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="COPYRIGHT" size="15" />
+                     </graphic>
+                  </Label>
+                  <Pane fx:id="AboutThisAppPanel" prefHeight="297.0" prefWidth="343.0" style="-fx-background-color: Whitesmoke;" visible="false">
+                     <children>
+                        <ImageView fitHeight="181.0" fitWidth="136.0" layoutX="14.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Fotor_154799391275750.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="74.0" layoutY="4.0" text="A propos de cette application">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="34.0" text="Une application pour gérer les frais de scolarité, faites " />
+                        <Label layoutX="14.0" layoutY="51.0" text="pendant le stage au Lycée Saint Joseph Ambalavao 303. " />
+                        <Label layoutX="14.0" layoutY="68.0" text="Afin de traiter rapidement les droits, écolages, construction " />
+                        <Label layoutX="14.0" layoutY="85.0" text="et subvention des élèves." />
+                        <Label layoutX="159.0" layoutY="102.0" text="Développeé par : ">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="182.0" layoutY="123.0" text="ANDRIAMAHALALA" />
+                        <Label layoutX="182.0" layoutY="140.0" text="Hamelien " />
+                        <Label layoutX="240.0" layoutY="140.0" text="Marius" />
+                        <Label layoutX="212.0" layoutY="169.0" text="Contact">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="159.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/icons8_Phone_48px.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="195.0" layoutY="197.0" text="034 96 609 28" />
+                        <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="159.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/icons8_Facebook_48px.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="195.0" layoutY="229.0" text="Marius Hamelien" />
+                        <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="162.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/icons8_Gmail_48px.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="196.0" layoutY="263.0" text="marius.hamelien@gmail.com">
+                           <font>
+                              <Font name="System Italic" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="183.0" layoutY="156.0" text="L3 IG ENI" />
+                     </children>
+                  </Pane>
+               </children></Pane>
+         </children>
+      </VBox>
+      <AnchorPane onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="385.0" prefWidth="393.0">
+         <children>
+            <AnchorPane fx:id="signUpPane" layoutX="273.0" layoutY="113.0" prefHeight="374.0" prefWidth="354.0" style="-fx-background-color: rgb(255, 255, 255); -fx-border-radius: 10; -fx-background-radius: 10;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label alignment="CENTER" layoutX="25.0" layoutY="14.0" prefHeight="53.0" prefWidth="308.0" text="Création d'un compte">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USER_PLUS" size="30" />
+                     </graphic>
+                  </Label>
+                  <JFXTextField fx:id="userN" focusColor="#2e75b6" labelFloat="true" layoutX="82.0" layoutY="98.0" prefHeight="30.0" prefWidth="215.0" promptText="Nom d'utilisateur">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="pass1" focusColor="#2e75b6" labelFloat="true" layoutX="84.0" layoutY="157.0" prefHeight="30.0" prefWidth="215.0" promptText="Mot de passe">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="save" buttonType="RAISED" defaultButton="true" layoutX="86.0" layoutY="279.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="191.0" stylesheets="@../CSS/login.css" text="Enregistrer">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="CONTENT_SAVE" size="30" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Line endX="136.0" layoutX="177.0" layoutY="79.0" startX="-137.0" />
+                  <Line endX="136.0" layoutX="177.0" layoutY="268.0" startX="-137.0" />
+                  <Label fx:id="Notif_save" alignment="CENTER" layoutX="34.0" layoutY="330.0" prefHeight="30.0" prefWidth="290.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="USER" layoutX="47.0" layoutY="123.0" size="30" />
+                  <FontAwesomeIconView glyphName="KEY" layoutX="44.0" layoutY="182.0" size="30" />
+                  <JFXPasswordField fx:id="pass2" focusColor="#2e75b6" labelFloat="true" layoutX="84.0" layoutY="213.0" prefHeight="30.0" prefWidth="215.0" promptText="Rentrer le mot de passe">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <FontAwesomeIconView glyphName="KEY" layoutX="44.0" layoutY="238.0" size="30" />
+                  <MaterialDesignIconView fill="#2e75b6" glyphName="BACKBURGER" layoutX="4.0" layoutY="21.0" onMouseClicked="#retour" size="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MaterialDesignIconView>
+               </children>
+            </AnchorPane>
+            <JFXToolbar onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="25.0" prefWidth="900.0">
+               <right>
+                  <Pane prefHeight="25.0" prefWidth="163.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox layoutX="77.0" prefHeight="25.0" prefWidth="86.0">
+                           <children>
+                              <JFXButton fx:id="info" contentDisplay="GRAPHIC_ONLY" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="27.0" stylesheets="@../CSS/login.css">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="INFO" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="minimize" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" stylesheets="@../CSS/login.css">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_MINIMIZE" size="13" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <JFXButton fx:id="close" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" stylesheets="@../CSS/login.css">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="13" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </right>
+            </JFXToolbar>
+            <Label layoutX="21.0" layoutY="486.0" prefWidth="130.0" text="Gestion" textFill="#2e75b6">
+               <font>
+                  <Font name="Roboto Thin" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="111.0" layoutY="512.0" prefHeight="82.0" prefWidth="249.0" text="Ecolage">
+               <font>
+                  <Font name="Calibri Light Italic" size="72.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.47777777777777775" centerY="0.49523809523809526" cycleMethod="REPEAT" focusAngle="-34.05" focusDistance="-1.0" radius="0.22093023255813948">
+                     <stops>
+                        <Stop color="WHITE" />
+                        <Stop color="#0099ff" offset="0.16577793577438066" />
+                        <Stop color="#2e75b6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="24.0" layoutY="528.0" prefHeight="33.0" prefWidth="75.0" text="d'un" textFill="#2e75b6">
+               <font>
+                  <Font name="Roboto Light" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="273.0" layoutY="43.0" onMouseDragged="#Dragged" onMousePressed="#Pressed" text="Lycée Privé Catholique" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="60.0" text="St" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="284.0" layoutY="51.0" onMouseDragged="#Dragged" onMousePressed="#Pressed" text="Joseph AMBALAVAO" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Thin" size="36.0" />
+               </font>
+            </Label>
+            <Separator layoutX="348.0" layoutY="100.0" prefWidth="200.0" />
+            <AnchorPane fx:id="loginPane" layoutX="273.0" layoutY="113.0" prefHeight="374.0" prefWidth="354.0" style="-fx-background-color: rgb(255, 255, 255); -fx-border-radius: 10; -fx-background-radius: 10;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="14.0" prefHeight="53.0" prefWidth="308.0" text="Authentification">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="username" focusColor="#2e75b6" labelFloat="true" layoutX="82.0" layoutY="98.0" prefHeight="30.0" prefWidth="215.0" promptText="Nom d'utilisateur">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="password" focusColor="#2e75b6" labelFloat="true" layoutX="82.0" layoutY="157.0" prefHeight="30.0" prefWidth="215.0" promptText="Mot de passe">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="loginBtn" buttonType="RAISED" defaultButton="true" layoutX="84.0" layoutY="256.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="191.0" stylesheets="@../CSS/login.css" text="Connexion">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="LOGIN" size="30" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Line endX="136.0" layoutX="177.0" layoutY="79.0" startX="-137.0" />
+                  <Line endX="136.0" layoutX="177.0" layoutY="242.0" startX="-137.0" />
+                  <Label fx:id="Notif_login" alignment="CENTER" layoutX="29.0" layoutY="317.0" prefHeight="30.0" prefWidth="301.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="47.0" layoutY="212.0" text="Pas encore membre?" />
+                  <Label fx:id="createLbl" disable="true" layoutX="165.0" layoutY="212.0" onMouseClicked="#SignUp" text="Créer un compte." textFill="#2e75b6" underline="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Roboto Light" size="12.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="USER" layoutX="47.0" layoutY="123.0" size="30" />
+                  <FontAwesomeIconView glyphName="KEY" layoutX="44.0" layoutY="182.0" size="30" />
+                  <MaterialDesignIconView glyphName="LOCK" layoutX="56.0" layoutY="51.0" size="30" />
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="169.0" fitWidth="222.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/LOGOGB%20M.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
